@@ -1,0 +1,141 @@
+# disallow for servitor (busted unity)
+civic_tec_machine_alpha_directive = {
+	icon = gfx/interface/icons/governments/civics/gestalt_civics/civic_tec_machine_alpha_directive.dds
+	description = "civic_tec_machine_alpha_directive_tooltip"
+
+	potential = {
+		inline_script = governments/conditions/is_machine_intelligence
+	}
+
+	possible = {
+		civics = {
+			NOR = {
+				value = civic_tec_machine_prime_directive
+				#value = civic_tec_machine_alpha_directive
+				value = civic_tec_machine_delta_directive
+				value = civic_tec_machine_epsilon_directive
+				value = civic_tec_machine_zeta_directive
+				value = civic_tec_machine_iota_directive
+				value = civic_tec_machine_lambda_directive
+				value = civic_tec_machine_omicron_directive
+				value = civic_tec_machine_rho_directive
+				value = civic_tec_machine_upsilon_directive
+				value = civic_tec_machine_omega_directive
+				
+				value = civic_machine_servitor
+			}
+		}
+	}
+
+	random_weight = { base = 5 }
+	modifier = {
+		
+	}
+}
+
+civic_tec_corporate_automatation = {
+	icon = gfx/interface/icons/governments/civics/megacorp_civics/civic_tec_corporate_automatation.dds
+	description = "civic_tec_corporate_automatation_tooltip"
+	potential = {
+		inline_script = governments/conditions/is_corporate
+	}
+
+	modification = no
+
+	possible = {
+	
+		ethics = {
+			OR = {
+				text = civic_tooltip_industrialist
+				inline_script = governments/conditions/ethic_industrial
+			}
+
+		}
+
+	}
+	random_weight = { base = 5 }
+	modifier = {
+		planet_jobs_robotic_produces_mult = 0.05
+		planet_pops_robotics_upkeep_mult = -0.1
+	}
+}
+
+civic_tec_hive_symbiotic = {
+	icon = gfx/interface/icons/governments/civics/gestalt_civics/civic_tec_hive_symbiotic.dds
+	description = "civic_tec_hive_symbiotic_tooltip"
+
+	modification = no
+	
+	potential = {
+		inline_script = governments/conditions/is_hive_mind
+	}
+
+	possible = {
+		ethics = {
+			NOT = {
+				value = ethic_gestalt_apathy
+			}
+		}
+		civics = {
+			NOR = {
+				text = civic_tooltip_tec_genocidal_block
+				value = civic_hive_devouring_swarm
+				value = civic_tec_hive_cyberhorror
+			}
+		}
+	}
+	random_weight = { base = 1 }
+	modifier = {
+		envoys_add = 1
+		empire_size_penalty_mult = 0.5
+	}
+}
+
+civic_tec_machine_cooperators = {
+	icon = gfx/interface/icons/governments/civics/gestalt_civics/civic_tec_machine_cooperators.dds
+	description = "civic_tec_machine_cooperators_tooltip"
+
+	modification = no
+
+	potential = {
+		inline_script = governments/conditions/is_machine_intelligence
+	}
+
+	possible = {
+		ethics = {
+			value = ethic_gestalt_empathy
+		}
+	}
+
+	modifier = {
+		envoys_add = 1
+		envoy_improve_relations_mult = 0.25
+		empire_size_penalty_mult = 0.5
+	}
+
+	random_weight = { base = 2 }
+}
+
+civic_tec_regular_hoarder = {	# Lacking some art but fully functional i.e playable
+		icon = gfx/interface/icons/governments/civics/regular_civics/civic_tec_regular_hoarder.dds
+		description = "civic_tec_regular_hoarder_tooltip"
+
+		modification = no
+
+		potential = {
+			inline_script = governments/conditions/is_regular
+		}
+
+		possible = {
+			always = yes
+		}
+
+		modifier = {
+			starbase_defense_platform_capacity_add = 2
+			country_trust_growth = -0.2
+		}
+	}
+
+	civic_tec_regular_chemical_barons = {
+		inline_script = governments/inline_evolved_disabled
+	}
