@@ -115,3 +115,27 @@ civic_tec_machine_cooperators = {
 
 	random_weight = { base = 2 }
 }
+
+civic_tec_regular_hoarder = {	# Lacking some art but fully functional i.e playable
+		icon = gfx/interface/icons/governments/civics/regular_civics/civic_tec_regular_hoarder.dds
+		description = "civic_tec_regular_hoarder_tooltip"
+
+		modification = no
+
+		potential = {
+			inline_script = governments/conditions/is_regular
+		}
+
+		possible = {
+			always = yes
+		}
+
+		modifier = {
+			starbase_defense_platform_capacity_add = 2
+			country_trust_growth = -0.2
+		}
+	}
+
+	civic_tec_regular_chemical_barons = {
+		inline_script = governments/inline_evolved_disabled
+	}
